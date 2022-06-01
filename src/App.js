@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import GameScreen from "./screens/Game";
 import "./App.css";
 
 function App() {
@@ -8,7 +8,9 @@ function App() {
         <div
           className="MainScreen"
           style={{ width: 800, height: 550, backgroundColor: "black" }}
-        ></div>
+        >
+          <GameScreen />
+        </div>
       </header>
     </div>
   );
