@@ -10,3 +10,5 @@ const store = configureStore({
     gameClick: gameReducer,
   },
 });
+
+export default store;
