@@ -46,9 +46,11 @@ export default function BaseGame() {
           height: `${((550 - 70) / 100) * goal}px`,
         }}
       ></div>
-      <div className="city-L1">
-        {/* <img alt="" src={require("./images/city01.png")} /> */}
+      <div className="city-front">
+        <img alt="" src={require("./images/city00.png")} />
       </div>
+      <div className="city-L1"> </div>
+      <div className="explosion"></div>
     </div>
   );
 }
