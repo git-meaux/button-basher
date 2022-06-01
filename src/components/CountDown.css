@@ -1,0 +1,47 @@
+@keyframes countdown{
+    0% {
+     
+      content: "3";
+    }
+   
+   25% {
+     
+      content: "2";
+    }
+    50% {
+     
+      content: "1";
+    }
+     75% {
+     
+      content: "GO!";
+    }
+    
+  }
+
+.countdown-container {
+  position: absolute;
+  top:230px;
+  -webkit-text-stroke: 2px black;
+  text-shadow:0 0 10px rgba(0, 0, 0, 0.589);
+  text-align: center;
+  width: 100%;
+  height: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2em;
+  font-weight: 800;
+  /* overflow: hidden; */
+  color: rgb(255, 241, 202);
+  margin-bottom: 20px;
+  z-index: 10;
+}
+
+.countdown-container:before {
+  content:'';
+  display: block;
+
+  width: 100%;
+  height: 1em;
+  animation: countdown 3s step-end ;
+}

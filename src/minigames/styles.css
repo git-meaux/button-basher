@@ -15,25 +15,30 @@
 .game-titlebar{
     position: absolute;
     text-align: center;
-    background-color: rgba(0,0,0,0.5);
+    /* background-color: rgba(0,0,0,0.5); */
+    background: linear-gradient(rgba(89, 193, 254, 0.5) 20%, #59c1fe 40%, #59c1fe 60%, rgba(89, 193, 254, 0.2) 80%);
     border-top: 2px solid rgb(209, 209, 209);
     border-bottom:2px solid rgb(209, 209, 209);
     text-shadow: 0px 0px 30px rgb(160, 228, 255);
     -webkit-text-stroke: 1.5px white;
     -webkit-text-fill-color: black;
-    top:200px;
+    top:140px;
     width: 100%;
     z-index: 9;
+    animation-name: title-fade;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
 }
 
 .thing{
     position: absolute;
-    left: 398px;
+    left: 399px;
     top:70px;
-    width: 5px;
+    width: 2px;
     height: 5px;
     background-color: rgb(201, 252, 247);
-    z-index: 0;
+    z-index: 1;
 }
 .ship{
     position: absolute;
@@ -57,7 +62,7 @@
 .city-L1{
     position: absolute;
     bottom: -70px;
-    left: 190px;
+    left: 203px;
     background-image: url("./images/city01.png");
     background-repeat: no-repeat;
     width: 400px;
@@ -66,7 +71,7 @@
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
-    z-index: 1;
+    z-index: 0;
 }
 
 .ship img {
@@ -75,11 +80,30 @@
 
 .explosion{
     position: absolute;
+    /* transform: scaleX(4); */
     height: 500px;
-    width: 50px;
-    background-color: white;
-    left:375px;
+    width: 20px;
+    left:395px;
     bottom:0px;
     transform: scale(2);
     z-index: 4;
 }
+
+.explosion img{
+    width: 100%;
+    height: 100%;
+    transform: scaleX(30);
+    animation-name: explosion-scale;
+    animation-duration: 1s;
+}
+
+@keyframes explosion-scale {
+    from {transform: scaleX(0.4)}
+    to {transform: scaleX(30)}
+}
+
+@keyframes title-fade {
+    from {transform: scaleY(1)}
+    to {transform: scaleY(0)}
+}
+

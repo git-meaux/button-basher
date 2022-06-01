@@ -4,6 +4,7 @@ import { useEffect, useCallback } from "react";
 import { countIncrement } from "../store/game/slice";
 import { selectCount } from "../store/game/selector";
 
+import CountDown from "../components/CountDown";
 import "./styles.css";
 
 export default function BaseGame() {
@@ -36,21 +37,29 @@ export default function BaseGame() {
         {/* <p>target reached:</p>
         <p>{goal}%</p> */}
       </div>
+      <CountDown />
       <div className="ship">
         <img alt="" src={require("./images/ufo.png")} />
       </div>
-
       <div
         className="thing"
         style={{
           height: `${((550 - 70) / 100) * goal}px`,
         }}
       ></div>
+
       <div className="city-front">
         <img alt="" src={require("./images/city00.png")} />
       </div>
       <div className="city-L1"> </div>
-      <div className="explosion"></div>
+      {count !== target ? (
+        ""
+      ) : (
+        <div className="explosion">
+          <img alt="" src={require("./images/beam.png")} />
+        </div>
+      )}
+      <div className="aftergame">post game</div>
     </div>
   );
 }
