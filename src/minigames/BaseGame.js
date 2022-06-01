@@ -20,6 +20,9 @@ export default function BaseGame() {
     if (count < target) {
       dispatch(countIncrement());
     }
+    if (count >= target) {
+      dispatch(stopTimer());
+    }
   };
 
   useEffect(() => {

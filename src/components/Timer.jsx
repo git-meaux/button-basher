@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux"
 
 import { selectRunning } from "../store/timer/selector";
 
+import "./Timer.css"
+
 export default function Timer(){
 
     const [time,setTime] = useState(0)
@@ -25,7 +27,7 @@ export default function Timer(){
     },[isRunning])
     
     return <div className="timer">
-        <p>timer here:</p>
+        {/* <p>timer here:</p> */}
         <h2>{time}</h2>
     </div>
 }

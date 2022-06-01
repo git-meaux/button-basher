@@ -13,6 +13,7 @@
     outline: none;
 }
 .game-titlebar{
+    font-family: 'Press Start 2P';
     position: absolute;
     text-align: center;
     /* background-color: rgba(0,0,0,0.5); */
