@@ -40,7 +40,21 @@
     left:325px;
     z-index: 3;
 }
-img {
+
+.city-L1{
+    position: absolute;
+    bottom: 50px;
+    left: 200px;
+    background-image: url("./images/city01.png");
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 100px;
+    transform: scale(2);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+.ship img {
     width: 150px;
 }
 
