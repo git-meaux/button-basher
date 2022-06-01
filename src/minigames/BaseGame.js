@@ -32,9 +32,9 @@ export default function BaseGame() {
       onKeyDown={keyPressHandler}
     >
       <div className="game-titlebar">
-        <h3>Title here</h3>
-        <p>target reached:</p>
-        <p>{goal}%</p>
+        <h2>Destroy City</h2>
+        {/* <p>target reached:</p>
+        <p>{goal}%</p> */}
       </div>
       <div className="ship">
         <img alt="" src={require("./images/ufo.png")} />
@@ -43,7 +43,7 @@ export default function BaseGame() {
       <div
         className="thing"
         style={{
-          height: `${goal}%`,
+          height: `${((550 - 70) / 100) * goal}px`,
         }}
       ></div>
     </div>
