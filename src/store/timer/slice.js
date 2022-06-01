@@ -14,7 +14,7 @@ export const timerSlice = createSlice({
     },
     stopTimer: (state, action) => {
       state.isRunning = false;
-      state.timeScore = action.payload; // the payload is going to be the stopped time
+      // state.timeScore = action.payload; // the payload is going to be the stopped time
     },
   },
 });

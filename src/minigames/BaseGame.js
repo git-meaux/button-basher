@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useCallback } from "react";
 
 import { countIncrement } from "../store/game/slice";
+import { startTimer, stopTimer } from "../store/timer/slice";
 import { selectCount } from "../store/game/selector";
 
 import CountDown from "../components/CountDown";
@@ -16,7 +17,6 @@ export default function BaseGame() {
 
   const keyPressHandler = (event) => {
     // console.log(`Key pressed: ${event.key}`);
-
     if (count < target) {
       dispatch(countIncrement());
     }
@@ -24,6 +24,9 @@ export default function BaseGame() {
 
   useEffect(() => {
     // do something?
+    setTimeout(() => {
+      dispatch(startTimer());
+    }, 3000);
   }, []);
 
   return (
