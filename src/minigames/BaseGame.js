@@ -10,7 +10,7 @@ import "./styles.css";
 export default function BaseGame() {
   const dispatch = useDispatch();
   const count = useSelector(selectCount);
-  const target = 20;
+  const target = 80;
 
   const goal = Math.round((count / target) * 100);
 
@@ -59,7 +59,6 @@ export default function BaseGame() {
           <img alt="" src={require("./images/beam.png")} />
         </div>
       )}
-      <div className="aftergame">post game</div>
     </div>
   );
 }

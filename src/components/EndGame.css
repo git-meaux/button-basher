@@ -1,0 +1,8 @@
+.EndGame{
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    border: 2px solid whitesmoke;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+    z-index: 12;
+}
