@@ -36,6 +36,9 @@ export default function BaseGame() {
         <p>target reached:</p>
         <p>{goal}%</p>
       </div>
+      <div className="ship">
+        <img alt="" src={require("./images/ufo.png")} />
+      </div>
 
       <div
         className="thing"

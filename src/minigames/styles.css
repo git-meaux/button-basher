@@ -21,6 +21,15 @@
     top:0;
     width: 5px;
     height: 5px;
-    background-color: red;
+    background-color: rgb(201, 252, 247);
     z-index: 0;
+}
+.ship{
+    position: absolute;
+    top:50px;
+    left:325px;
+    z-index: 3;
+}
+img {
+    width: 150px;
 }
