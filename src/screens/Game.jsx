@@ -3,6 +3,8 @@ import { useEffect } from "react";
 
 import BaseGame from "../minigames/BaseGame";
 
+import "./styles.css"
+
 // goal: other games imported
 // perhapse oter "games" could be scenes
 

@@ -13,11 +13,9 @@ export default function BaseGame() {
 
   const goal = Math.round((count / target) * 100);
 
-  // console.log(count);
-
   const keyPressHandler = (event) => {
     // console.log(`Key pressed: ${event.key}`);
-    // console.log(count, target);
+
     if (count < target) {
       dispatch(countIncrement());
     }
@@ -27,17 +25,24 @@ export default function BaseGame() {
     // do something?
   }, []);
 
-  console.log("count", count);
-
   return (
     <div
       className="basegame-container"
       tabIndex={"0"}
       onKeyDown={keyPressHandler}
     >
-      <h2>This base game</h2>
-      <p>target reached:</p>
-      <p>{goal}%</p>
+      <div className="game-titlebar">
+        <h3>Title here</h3>
+        <p>target reached:</p>
+        <p>{goal}%</p>
+      </div>
+
+      <div
+        className="thing"
+        style={{
+          height: `${goal}%`,
+        }}
+      ></div>
     </div>
   );
 }

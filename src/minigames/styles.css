@@ -1,13 +1,26 @@
 .basegame-container{
+    position: relative;
     width: 100%;
     height: 100%;
     border: 1px solid white;
+    
 }
 
 .basegame-container:focus{
     outline: none;
 }
-.GameScreen{
-    width: 100%;
-    height: 100%;
+.game-titlebar{
+    position: absolute;
+    left: 300px;
+    z-index: 2;
+}
+
+.thing{
+    position: absolute;
+    left: 400px;
+    top:0;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    z-index: 0;
 }
