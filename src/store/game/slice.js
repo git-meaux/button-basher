@@ -9,7 +9,7 @@ export const gameSlice = createSlice({
   initialState,
   reducers: {
     countIncrement: (state) => {
-      console.log("triggered countIncrement");
+      // console.log("triggered countIncrement");
       state.count = state.count + 1;
     },
     countReset: (state) => {
