@@ -44,14 +44,14 @@ export default function KeyPressers(props){ // passing props-> keys={["X","Y","Z
 
     return <div className="KEYS"
     tabIndex={"0"}
+    onKeyDown={keyPressHandler}
     ref={gameRef}
     >
         
     <p>PRESS:</p>
     <div 
     className="holder"
-    tabIndex={"0"}
-    onKeyDown={keyPressHandler}
+    
     >
         {keys.map((str,index) => (<div key={index} className="KEY">{str}</div>))}
     </div>
