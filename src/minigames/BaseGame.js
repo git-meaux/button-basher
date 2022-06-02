@@ -21,7 +21,7 @@ export default function BaseGame() {
   const dispatch = useDispatch();
   const count = useSelector(selectCount);
   const isRunning = useSelector(selectRunning);
-  const gameEnd = useSelector(selectGameEnd);
+  const gameEndState = useSelector(selectGameEnd);
   const target = 60;
 
   const goal = Math.round((count / target) * 100);
@@ -78,10 +78,15 @@ export default function BaseGame() {
           <img alt="" src={require("./images/beam.png")} />
         </div>
       )}
-      {count === target ? <EndGame /> : ""}
-      <TransitionScreen />
-      {}
-      <PostGameMenu />
+
+      {!gameEndState ? (
+        ""
+      ) : (
+        <>
+          {" "}
+          <EndGame /> <TransitionScreen /> <PostGameMenu />{" "}
+        </>
+      )}
     </div>
   );
 }
