@@ -32,7 +32,7 @@ export default function BaseGame() {
     if (count < target && isRunning) {
       dispatch(countIncrement());
     }
-    if (count >= target && !isRunning) {
+    if (count >= target && isRunning) {
       dispatch(stopTimer());
       dispatch(gameEnd());
     }
@@ -40,7 +40,7 @@ export default function BaseGame() {
 
   useEffect(() => {
     // do something?
-    gameRef.current.focus();
+    // gameRef.current.focus();
     setTimeout(() => {
       dispatch(startTimer());
     }, 3000);
@@ -49,9 +49,9 @@ export default function BaseGame() {
   return (
     <div
       className="basegame-container"
-      tabIndex={"0"}
+      // tabIndex={"0"}
       onKeyDown={keyPressHandler}
-      ref={gameRef}
+      // ref={gameRef}
     >
       <div className="game-titlebar">
         <h2>Attack!</h2>
