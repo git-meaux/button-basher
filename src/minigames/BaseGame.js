@@ -7,10 +7,12 @@ import { gameEnd, notGameEnd } from "../store/game/slice";
 
 import { selectCount } from "../store/game/selector";
 import { selectRunning } from "../store/timer/selector";
+import { selectGameEnd } from "../store/game/selector";
 
 import CountDown from "../components/CountDown";
 import EndGame from "../components/EndGame";
 import TransitionScreen from "../components/TransitionScreen";
+import PostGameMenu from "../components/PostGameMenu";
 
 import "./styles.css";
 
@@ -19,6 +21,7 @@ export default function BaseGame() {
   const dispatch = useDispatch();
   const count = useSelector(selectCount);
   const isRunning = useSelector(selectRunning);
+  const gameEnd = useSelector(selectGameEnd);
   const target = 60;
 
   const goal = Math.round((count / target) * 100);
@@ -77,6 +80,8 @@ export default function BaseGame() {
       )}
       {count === target ? <EndGame /> : ""}
       <TransitionScreen />
+      {}
+      <PostGameMenu />
     </div>
   );
 }

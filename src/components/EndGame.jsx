@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { useSelector } from "react-redux"
 
 import { selectGameEnd } from "../store/game/selector"
+// get a timeStamp in selector
 
 import "./EndGame.css"
 

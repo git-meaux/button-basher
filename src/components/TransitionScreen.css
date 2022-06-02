@@ -23,6 +23,7 @@
 
 
 @keyframes transition {
-    0%{transform: scale(0);}
+    0%{transform: scale(0)}
+    25%{transform: scale(0)}
     100%{transform: scale(2)}
 }

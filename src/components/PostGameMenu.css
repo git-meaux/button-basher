@@ -1,0 +1,21 @@
+.postgame-menu{
+    position: absolute;
+    padding: 20px;
+    bottom: 0px;
+    width: 800px;
+    border-top: 2px solid white;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Press Start 2P';
+    font-size: 18px;
+    background-color: rgb(46, 39, 39);
+
+    z-index: 12;
+}
+
+.postgame-menu div:hover{
+    color: darkgray;
+    cursor: pointer;
+}
