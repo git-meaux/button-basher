@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   count: 0,
   endGame: false,
+  target: 60,
 };
 
 export const gameSlice = createSlice({
@@ -21,6 +22,9 @@ export const gameSlice = createSlice({
     },
     notGameEnd: (state) => {
       state.endGame = false;
+    },
+    setTarget: (state, action) => {
+      state.target = action.payload;
     },
   },
 });

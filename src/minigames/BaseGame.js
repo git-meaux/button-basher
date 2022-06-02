@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useCallback, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import { countIncrement } from "../store/game/slice";
 import { startTimer, stopTimer } from "../store/timer/slice";

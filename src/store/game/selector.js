@@ -3,3 +3,5 @@ export const selectCount = (state) => {
   return state.gameClick.count;
 };
 export const selectGameEnd = (state) => state.gameClick.endGame;
+
+export const selectTarget = (state) => state.gameClick.target;
