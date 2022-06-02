@@ -26,15 +26,15 @@ export default function KeyPressers(props){ // passing props-> keys={["X","Y","Z
     // string var should be passed
     // string var are placed in divs as keys graphics
     const keyPressHandler = (event) => {
-        console.log(`Key pressed: ${event.key}`);
+        // console.log(`Key pressed: ${event.key}`);
 
-        // if (count < target && isRunning) {
-        //   dispatch(countIncrement());
-        // }
-        // if (count >= target && !gameEndState) {
-        //   dispatch(stopTimer());
-        //   dispatch(gameEnd());
-        // }
+        if (count < target && isRunning) {
+            dispatch(countIncrement());
+          }
+          if (count >= target && isRunning) {
+            dispatch(stopTimer());
+            dispatch(gameEnd());
+          }
       };
 
 

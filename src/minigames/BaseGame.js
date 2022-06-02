@@ -50,7 +50,7 @@ export default function BaseGame() {
     <div
       className="basegame-container"
       // tabIndex={"0"}
-      onKeyDown={keyPressHandler}
+      // onKeyDown={keyPressHandler}
       // ref={gameRef}
     >
       <div className="game-titlebar">
