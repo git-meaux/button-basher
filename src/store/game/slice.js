@@ -24,7 +24,7 @@ export const gameSlice = createSlice({
       state.endGame = false;
     },
     setTarget: (state, action) => {
-      console.log("setTarget: ", action.payload);
+      // console.log("setTarget: ", action.payload);
       state.target = action.payload;
     },
   },

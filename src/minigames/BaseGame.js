@@ -70,7 +70,8 @@ export default function BaseGame() {
           <EndGame /> <TransitionScreen /> <PostGameMenu />{" "}
         </>
       )}
-      {!isRunning ? "" : <Timer />}
+      {/* {!isRunning ? "" : <Timer />} */}
+      <Timer />
     </div>
   );
 }

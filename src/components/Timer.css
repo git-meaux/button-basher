@@ -5,8 +5,9 @@
     bottom:188px;
     left:246px;
     transform: skew(-14deg);
+    color: red;
 
 
-    z-index: 8;
+    z-index: 18;
 
 }

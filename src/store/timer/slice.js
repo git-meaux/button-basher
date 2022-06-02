@@ -14,11 +14,14 @@ export const timerSlice = createSlice({
     },
     stopTimer: (state, action) => {
       state.isRunning = false;
-      // state.timeScore = action.payload; // the payload is going to be the stopped time
+    },
+    setScore: (state, action) => {
+      console.log("time: ", action.payload);
+      state.timeScore = action.payload;
     },
   },
 });
 
-export const { startTimer, stopTimer } = timerSlice.actions;
+export const { startTimer, stopTimer, setScore } = timerSlice.actions;
 
 export default timerSlice.reducer;

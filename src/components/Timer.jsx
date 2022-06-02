@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import { selectRunning } from "../store/timer/selector";
-
+import { setScore } from "../store/timer/slice";
 import "./Timer.css"
 
 export default function Timer(){
@@ -19,10 +19,16 @@ export default function Timer(){
                 setTime((prevTime)=>prevTime + 1 ); 
             },10)
         } else if (!isRunning) {
-            clearInterval(interval)
+            dispatch(setScore(time/100));
+            clearInterval(interval);
+            
         }
 
-        return () => clearInterval(interval);
+        return () => {
+            console.log("STOP THE TIME")
+            dispatch(setScore(time))
+            clearInterval(interval)
+        };
 
     },[isRunning])
     
