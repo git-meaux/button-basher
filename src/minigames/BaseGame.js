@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useRef } from "react";
 
 import { countIncrement } from "../store/game/slice";
 import { startTimer, stopTimer } from "../store/timer/slice";
@@ -15,6 +15,7 @@ import TransitionScreen from "../components/TransitionScreen";
 import "./styles.css";
 
 export default function BaseGame() {
+  const gameRef = useRef();
   const dispatch = useDispatch();
   const count = useSelector(selectCount);
   const isRunning = useSelector(selectRunning);
@@ -35,6 +36,7 @@ export default function BaseGame() {
 
   useEffect(() => {
     // do something?
+    gameRef.current.focus();
     setTimeout(() => {
       dispatch(startTimer());
     }, 3000);
@@ -45,6 +47,7 @@ export default function BaseGame() {
       className="basegame-container"
       tabIndex={"0"}
       onKeyDown={keyPressHandler}
+      ref={gameRef}
     >
       <div className="game-titlebar">
         <h2>Attack!</h2>
