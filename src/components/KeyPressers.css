@@ -1,3 +1,31 @@
 .KEYS{
-    
+    position: absolute;
+    z-index: 5;
+    width: 340px;
+    right: 224px;
+    bottom:50px;
+    /* background-color: rgba(41, 37, 37, 0.568); */
+    /* border: 2px solid whitesmoke; */
+    padding: 20px;
+    font-family: 'Press Start 2P';
+    font-size: 16px;
+
+}
+
+.KEYS p{
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.holder{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.KEY{
+    padding: 20px;
+    border: 2px solid whitesmoke;
+    background-color: rgba(20, 20, 20, 0.438);
 }

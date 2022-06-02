@@ -25,14 +25,16 @@ export default function KeyPressers(props){
     // string var are placed in divs as keys graphics
     const keyPressHandler = (event) => {
         // console.log(`Key pressed: ${event.key}`);
-        if (count < target && isRunning) {
-          dispatch(countIncrement());
-        }
-        if (count >= target && !gameEndState) {
-          dispatch(stopTimer());
-          dispatch(gameEnd());
-        }
+
+        // if (count < target && isRunning) {
+        //   dispatch(countIncrement());
+        // }
+        // if (count >= target && !gameEndState) {
+        //   dispatch(stopTimer());
+        //   dispatch(gameEnd());
+        // }
       };
+     
 
     useEffect(()=>{
         gameRef.current.focus();
@@ -41,8 +43,17 @@ export default function KeyPressers(props){
     return <div className="KEYS"
     ref={gameRef}
     >
-    <div>F</div>
-    <div>J</div>
+        
+    <p>PRESS:</p>
+    <div 
+    className="holder"
+    tabIndex={"0"}
+    onKeyDown={keyPressHandler}
+    >
+        <div className="KEY">F</div>
+        <div className="KEY">J</div>
+    </div>
+    
     </div>
 
 }

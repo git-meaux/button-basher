@@ -13,6 +13,7 @@ import CountDown from "../components/CountDown";
 import EndGame from "../components/EndGame";
 import TransitionScreen from "../components/TransitionScreen";
 import PostGameMenu from "../components/PostGameMenu";
+import KeyPressers from "../components/KeyPressers";
 
 import "./styles.css";
 
@@ -78,6 +79,7 @@ export default function BaseGame() {
           <img alt="" src={require("./images/beam.png")} />
         </div>
       )}
+      <KeyPressers />
 
       {!gameEndState ? (
         ""
