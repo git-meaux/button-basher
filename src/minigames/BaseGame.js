@@ -29,10 +29,10 @@ export default function BaseGame() {
 
   const keyPressHandler = (event) => {
     // console.log(`Key pressed: ${event.key}`);
-    if (count < target) {
+    if (count < target && isRunning) {
       dispatch(countIncrement());
     }
-    if (count >= target) {
+    if (count >= target && !isRunning) {
       dispatch(stopTimer());
       dispatch(gameEnd());
     }
@@ -79,7 +79,7 @@ export default function BaseGame() {
           <img alt="" src={require("./images/beam.png")} />
         </div>
       )}
-      <KeyPressers />
+      <KeyPressers keys={["F", "J"]} />
 
       {!gameEndState ? (
         ""

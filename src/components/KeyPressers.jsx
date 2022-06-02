@@ -13,13 +13,15 @@ import { selectTarget } from "../store/game/selector";
 
 import "./KeyPressers.css"
 
-export default function KeyPressers(props){ 
+export default function KeyPressers(props){ // passing props-> keys={["X","Y","Z"]}
     const dispatch = useDispatch()
     const gameRef = useRef();
     const count = useSelector(selectCount);
     const isRunning = useSelector(selectRunning);
     const gameEndState = useSelector(selectGameEnd);
     const target = useSelector(selectTarget);
+
+    const keys = props.keys;
 
     // string var should be passed
     // string var are placed in divs as keys graphics
@@ -34,7 +36,7 @@ export default function KeyPressers(props){
         //   dispatch(gameEnd());
         // }
       };
-     
+
 
     useEffect(()=>{
         gameRef.current.focus();
@@ -50,8 +52,7 @@ export default function KeyPressers(props){
     tabIndex={"0"}
     onKeyDown={keyPressHandler}
     >
-        <div className="KEY">F</div>
-        <div className="KEY">J</div>
+        {keys.map((str,index) => (<div key={index} className="KEY">{str}</div>))}
     </div>
     
     </div>
