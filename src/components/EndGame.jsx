@@ -1,9 +1,26 @@
+import { useEffect } from "react"
+import { useSelector } from "react-redux"
+
+import { selectGameEnd } from "../store/game/selector"
+
 import "./EndGame.css"
 
 export default function EndGame(){
-    <div className="EndGame">
-    <h1>post game</h1>
-    <p>time:</p>
-    <h3>:score:</h3>
+
+  const gameEnd = useSelector(selectGameEnd);
+
+    useEffect(()=>{
+
+    },[gameEnd])
+    
+  return <div>
+    {!gameEnd ? ""
+      :
+      <div className="EndGame">
+        <h1>FINISHED</h1>
+        <p>time</p>
+        <h2>X.XXs</h2>
+      </div>
+    }
   </div>
 }

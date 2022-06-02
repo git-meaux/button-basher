@@ -1,7 +1,15 @@
 .EndGame{
     position: absolute;
+    font-family: 'Press Start 2P';
+    text-shadow: 0px 3px 7px black;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 200%;
+    left: 200px;
+    top: 140px;
+    background-color: rgb(46, 39, 39);
     width: 400px;
-    height: 300px;
+    height: 200px;
     border: 2px solid whitesmoke;
     box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
     z-index: 12;

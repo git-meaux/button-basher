@@ -95,7 +95,7 @@
     height: 100%;
     transform: scaleX(30);
     animation-name: explosion-scale;
-    animation-duration: 1s;
+    animation-duration: 0.6s;
 }
 
 @keyframes explosion-scale {

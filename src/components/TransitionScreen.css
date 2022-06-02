@@ -1,0 +1,28 @@
+.transition-screen{
+    position: absolute;
+    width: 800px;
+    height: 550px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+
+    z-index: 11;
+}
+
+.transition-screen div{
+    position: relative;
+    top: 0px;
+    width: 550px;
+    height: 550px;
+    background-color: rgb(108 98 108);
+    border-radius: 50%;
+    animation: transition 2.5s forwards linear ;
+}
+
+
+@keyframes transition {
+    0%{transform: scale(0);}
+    100%{transform: scale(2)}
+}

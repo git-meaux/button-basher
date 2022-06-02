@@ -3,15 +3,22 @@ import { useEffect, useCallback } from "react";
 
 import { countIncrement } from "../store/game/slice";
 import { startTimer, stopTimer } from "../store/timer/slice";
+import { gameEnd, notGameEnd } from "../store/game/slice";
+
 import { selectCount } from "../store/game/selector";
+import { selectRunning } from "../store/timer/selector";
 
 import CountDown from "../components/CountDown";
+import EndGame from "../components/EndGame";
+import TransitionScreen from "../components/TransitionScreen";
+
 import "./styles.css";
 
 export default function BaseGame() {
   const dispatch = useDispatch();
   const count = useSelector(selectCount);
-  const target = 80;
+  const isRunning = useSelector(selectRunning);
+  const target = 60;
 
   const goal = Math.round((count / target) * 100);
 
@@ -22,6 +29,7 @@ export default function BaseGame() {
     }
     if (count >= target) {
       dispatch(stopTimer());
+      dispatch(gameEnd());
     }
   };
 
@@ -39,7 +47,7 @@ export default function BaseGame() {
       onKeyDown={keyPressHandler}
     >
       <div className="game-titlebar">
-        <h2>Destroy City</h2>
+        <h2>Attack!</h2>
         {/* <p>target reached:</p>
         <p>{goal}%</p> */}
       </div>
@@ -53,7 +61,6 @@ export default function BaseGame() {
           height: `${((550 - 70) / 100) * goal}px`,
         }}
       ></div>
-
       <div className="city-front">
         <img alt="" src={require("./images/city00.png")} />
       </div>
@@ -65,6 +72,8 @@ export default function BaseGame() {
           <img alt="" src={require("./images/beam.png")} />
         </div>
       )}
+      {count === target ? <EndGame /> : ""}
+      <TransitionScreen />
     </div>
   );
 }
