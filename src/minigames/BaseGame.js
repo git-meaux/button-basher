@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useRef } from "react";
 
-import { countIncrement } from "../store/game/slice";
+import { countIncrement, setTarget } from "../store/game/slice";
 import { startTimer, stopTimer } from "../store/timer/slice";
 import { gameEnd, notGameEnd } from "../store/game/slice";
 
-import { selectCount } from "../store/game/selector";
+import { selectCount, selectTarget } from "../store/game/selector";
 import { selectRunning } from "../store/timer/selector";
 import { selectGameEnd } from "../store/game/selector";
 
@@ -14,6 +14,7 @@ import EndGame from "../components/EndGame";
 import TransitionScreen from "../components/TransitionScreen";
 import PostGameMenu from "../components/PostGameMenu";
 import KeyPressers from "../components/KeyPressers";
+import Timer from "../components/Timer";
 
 import "./styles.css";
 
@@ -23,40 +24,21 @@ export default function BaseGame() {
   const count = useSelector(selectCount);
   const isRunning = useSelector(selectRunning);
   const gameEndState = useSelector(selectGameEnd);
-  const target = 60;
+  const target = useSelector(selectTarget);
 
   const goal = Math.round((count / target) * 100);
 
-  const keyPressHandler = (event) => {
-    // console.log(`Key pressed: ${event.key}`);
-    if (count < target && isRunning) {
-      dispatch(countIncrement());
-    }
-    if (count >= target && isRunning) {
-      dispatch(stopTimer());
-      dispatch(gameEnd());
-    }
-  };
-
   useEffect(() => {
-    // do something?
-    // gameRef.current.focus();
+    dispatch(setTarget(50)); // set the keypress target onloading
     setTimeout(() => {
       dispatch(startTimer());
     }, 3000);
   }, []);
 
   return (
-    <div
-      className="basegame-container"
-      // tabIndex={"0"}
-      // onKeyDown={keyPressHandler}
-      // ref={gameRef}
-    >
+    <div className="basegame-container">
       <div className="game-titlebar">
         <h2>Attack!</h2>
-        {/* <p>target reached:</p>
-        <p>{goal}%</p> */}
       </div>
       <CountDown />
       <div className="ship">
@@ -79,16 +61,16 @@ export default function BaseGame() {
           <img alt="" src={require("./images/beam.png")} />
         </div>
       )}
-      <KeyPressers keys={["F", "J"]} />
 
       {!gameEndState ? (
-        ""
+        <KeyPressers keys={["F", "J"]} />
       ) : (
         <>
           {" "}
           <EndGame /> <TransitionScreen /> <PostGameMenu />{" "}
         </>
       )}
+      {!isRunning ? "" : <Timer />}
     </div>
   );
 }

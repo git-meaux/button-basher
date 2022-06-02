@@ -16,7 +16,7 @@ export default function Timer(){
         let interval = null;
         if (isRunning) { 
             interval = setInterval(()=>{
-                setTime((prevTime)=>prevTime + 10 ); 
+                setTime((prevTime)=>prevTime + 1 ); 
             },10)
         } else if (!isRunning) {
             clearInterval(interval)
@@ -27,7 +27,7 @@ export default function Timer(){
     },[isRunning])
     
     return <div className="timer">
-        {/* <p>timer here:</p> */}
-        <h2>{time}</h2>
+        <p>Time: {time/100}</p>
+        
     </div>
 }

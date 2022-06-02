@@ -1,3 +1,12 @@
 .timer{
-    
+    font-family: 'Press Start 2P';
+    font-size: 26px;
+    position: absolute;
+    bottom:188px;
+    left:246px;
+    transform: skew(-14deg);
+
+
+    z-index: 8;
+
 }
