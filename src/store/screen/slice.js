@@ -12,9 +12,12 @@ export const screenSlice = createSlice({
     startLoading: (state) => {
       state.loading = true;
     },
+    changeScreen: (state, action) => {
+      state.screen = action.payload;
+    },
   },
 });
 
-export const { startLoading } = screenSlice.actions;
+export const { startLoading, changeScreen } = screenSlice.actions;
 
 export default screenSlice.reducer;

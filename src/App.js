@@ -1,4 +1,5 @@
 import GameScreen from "./screens/Game";
+import StartScreen from "./screens/Start";
 import "./App.css";
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
           className="MainScreen"
           style={{ width: 800, height: 550, backgroundColor: "black" }}
         >
-          <GameScreen />
+          <StartScreen />
+          {/* <GameScreen /> */}
         </div>
       </header>
     </div>

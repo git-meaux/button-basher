@@ -8,8 +8,8 @@ export default function PostGameMenu(){
 
     return <div className="postgame-menu">
         
-        <div>Startscreen</div>
-        <div>Replay</div>
+        <div className="post-select">Startscreen</div>
+        <div className="post-select">Replay</div>
         <div>Next Game</div>
     </div>
 }

@@ -51,7 +51,7 @@
     position: absolute;
     background-image: url("./images/city00.png");
     background-repeat: no-repeat;
-    
+    filter:brightness(110%);
     bottom: -20px;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
@@ -66,6 +66,7 @@
     left: 203px;
     background-image: url("./images/city01.png");
     background-repeat: no-repeat;
+    filter: brightness(130%);
     width: 400px;
     height: 200px;
     transform: scale(2);

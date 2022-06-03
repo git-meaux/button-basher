@@ -1,0 +1,26 @@
+.StartScreen{
+    position: relative;
+    font-family: 'Press Start 2P';
+    width: 800px;
+    height: 550px;
+    background-color: darkolivegreen;
+    background-image: url("./imgages/startscreen.png");
+}
+
+.ClickHere{
+    font-size: 24px;
+    position: absolute;
+    bottom: 40px;
+    left: 190px;
+    animation: blinker 1s linear infinite;
+}
+
+.playAudio{
+    
+}
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
