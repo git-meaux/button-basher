@@ -1,6 +1,12 @@
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+
+
 import "./Start.css";
+
 export default function StartScreen(){
+    const dispatch = useDispatch()
     const [muted,setMuted] =useState(false)
 
     return <div className="StartScreen">

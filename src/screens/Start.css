@@ -13,6 +13,7 @@
     bottom: 40px;
     left: 190px;
     animation: blinker 1s linear infinite;
+    cursor: pointer;
 }
 .mute img{
     position:absolute;
