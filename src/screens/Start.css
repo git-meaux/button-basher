@@ -4,7 +4,7 @@
     width: 800px;
     height: 550px;
     background-color: darkolivegreen;
-    background-image: url("./imgages/startscreen.png");
+    background-image: url("./images/startscreen.png");
 }
 
 .ClickHere{
@@ -14,9 +14,38 @@
     left: 190px;
     animation: blinker 1s linear infinite;
 }
+.mute img{
+    position:absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 30px;
+    filter: invert() opacity(50%);;
+    
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    cursor: pointer;
+
+}
+.mute img:hover{
+  cursor: pointer;
+}
+
+.notmute img{
+  position:absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 30px;
+  filter: invert() opacity(100%);;
+  
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  cursor: pointer;
+}
 
 .playAudio{
-    
+
 }
 
   @keyframes blinker {
