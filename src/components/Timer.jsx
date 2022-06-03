@@ -32,7 +32,7 @@ export default function Timer(){
 
     },[isRunning])
     
-    return <div className="timer">
+    return <div className="timer" style={ isRunning ? {display:"inline"}:{display:"none"} }>
         <p>Time: {time/100}</p>
         
     </div>
