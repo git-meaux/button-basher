@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
 import BaseGame from "../minigames/BaseGame";
+import SharkEscape from "../minigames/SharkEscape";
 
 import "./styles.css"
 
@@ -19,6 +20,7 @@ export default function GameScreen(){
         //
     })
     return <div className="GameScreen">
-        <BaseGame />
+        {/* <BaseGame /> */}
+        <SharkEscape/>
     </div>
 }

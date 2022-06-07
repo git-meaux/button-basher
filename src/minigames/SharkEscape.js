@@ -17,12 +17,22 @@ import KeyPressers from "../components/KeyPressers";
 import Timer from "../components/Timer";
 
 import "./styles.css";
+import "./sharkescape.css";
 
 export default function SharkEscape() {
   return (
-    <div className="basegame-container">
+    <div className="sharkescape-container">
       <div className="game-titlebar">
         <h2>ESCAPE!!</h2>
+      </div>
+      <CountDown />
+      <div className="water-layer"></div>
+      <div className="shark">
+        <img src={require("./images/shark.png")} alt="" />
+      </div>
+      <div className="flood-city"></div>
+      <div className="boat">
+        <img src={require("./images/boat-red.png")} alt="" />
       </div>
     </div>
   );
