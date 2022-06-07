@@ -1,5 +1,8 @@
 import GameScreen from "./screens/Game";
 import StartScreen from "./screens/Start";
+import { useSelector, useDispatch } from "react-redux";
+
+import { selectScreen } from "./store/screen/selector";
 import "./App.css";
 
 function App() {
