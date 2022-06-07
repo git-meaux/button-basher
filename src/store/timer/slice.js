@@ -19,9 +19,13 @@ export const timerSlice = createSlice({
       console.log("time: ", action.payload);
       state.timeScore = action.payload;
     },
+    resetScore: (state) => {
+      return initialState;
+    },
   },
 });
 
-export const { startTimer, stopTimer, setScore } = timerSlice.actions;
+export const { startTimer, stopTimer, setScore, resetScore } =
+  timerSlice.actions;
 
 export default timerSlice.reducer;

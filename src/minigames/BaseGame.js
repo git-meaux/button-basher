@@ -66,11 +66,9 @@ export default function BaseGame() {
         <KeyPressers keys={["F", "J"]} />
       ) : (
         <>
-          {" "}
-          <EndGame /> <TransitionScreen /> <PostGameMenu />{" "}
+          <EndGame /> <TransitionScreen /> <PostGameMenu />
         </>
       )}
-      {/* {!isRunning ? "" : <Timer />} */}
       <Timer />
     </div>
   );

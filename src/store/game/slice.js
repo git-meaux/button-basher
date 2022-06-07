@@ -27,10 +27,19 @@ export const gameSlice = createSlice({
       // console.log("setTarget: ", action.payload);
       state.target = action.payload;
     },
+    gameReset: (state) => {
+      return initialState;
+    },
   },
 });
 
-export const { countIncrement, countReset, gameEnd, notGameEnd, setTarget } =
-  gameSlice.actions;
+export const {
+  countIncrement,
+  countReset,
+  gameEnd,
+  notGameEnd,
+  setTarget,
+  gameReset,
+} = gameSlice.actions;
 
 export default gameSlice.reducer;
