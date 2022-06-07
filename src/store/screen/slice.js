@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   loadScreen: false,
   screen: 0,
+  game: 0,
 };
 
 export const screenSlice = createSlice({
@@ -15,9 +16,12 @@ export const screenSlice = createSlice({
     changeScreen: (state, action) => {
       state.screen = action.payload;
     },
+    changeGame: (state, action) => {
+      state.game = action.payload;
+    },
   },
 });
 
-export const { startLoading, changeScreen } = screenSlice.actions;
+export const { startLoading, changeScreen, changeGame } = screenSlice.actions;
 
 export default screenSlice.reducer;
