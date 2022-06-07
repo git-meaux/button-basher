@@ -6,6 +6,11 @@ import { selectScreen } from "./store/screen/selector";
 import "./App.css";
 
 function App() {
+  const Screen = useSelector(selectScreen);
+  console.log(Screen);
+
+  const Display = [<StartScreen />, <GameScreen />];
+
   return (
     <div className="App">
       <header className="App-header">
@@ -13,7 +18,8 @@ function App() {
           className="MainScreen"
           style={{ width: 800, height: 550, backgroundColor: "black" }}
         >
-          <StartScreen />
+          {Display[Screen.screen]}
+          {/* <StartScreen /> */}
           {/* <GameScreen /> */}
         </div>
       </header>

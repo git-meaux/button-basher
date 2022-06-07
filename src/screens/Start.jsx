@@ -19,7 +19,7 @@ export default function StartScreen(){
     const start = () =>{
         setMuted(true)
         Sound();
-        setTimeout(dispatch(changeScreen(1)),1000); 
+        setTimeout(()=>dispatch(changeScreen(1)),1000); 
     }
     
 
