@@ -15,9 +15,10 @@
     position: absolute;
     bottom: -69px;
     left: 0px;
-    z-index: 5;
+    z-index: 4;
 
-    animation: move-water 1s linear infinite;
+    animation: move-water linear infinite;
+    animation-duration:  1s;
 }
 .shark{
     position: absolute;

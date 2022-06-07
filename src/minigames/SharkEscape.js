@@ -20,18 +20,38 @@ import "./styles.css";
 import "./sharkescape.css";
 
 export default function SharkEscape() {
+  const gameRef = useRef();
+  const dispatch = useDispatch();
+  const count = useSelector(selectCount);
+  const isRunning = useSelector(selectRunning);
+  const gameEndState = useSelector(selectGameEnd);
+  const target = useSelector(selectTarget);
+
+  const goal = Math.round((count / target) * 100);
+
+  useEffect(() => {
+    dispatch(setTarget(80)); // set the keypress target onloading
+    setTimeout(() => {
+      dispatch(startTimer());
+    }, 3000);
+  }, []);
+
   return (
     <div className="sharkescape-container">
       <div className="game-titlebar">
         <h2>ESCAPE!!</h2>
       </div>
       <CountDown />
-      <div className="water-layer"></div>
+      <KeyPressers keys={["F", "J"]} />
+      <div className="water-layer"> </div>
       <div className="shark">
         <img src={require("./images/shark.png")} alt="" />
       </div>
       <div className="flood-city"></div>
-      <div className="boat">
+      <div
+        className="boat"
+        style={{ left: `${((820 - 300) / 100) * goal + 300}px` }}
+      >
         <img src={require("./images/boat-red.png")} alt="" />
       </div>
     </div>
