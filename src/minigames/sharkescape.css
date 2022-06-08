@@ -27,8 +27,7 @@
     transform: scale(3);
     left: 115px;
     bottom: 228px;
-
-    animation: shaking 3s linear infinite;
+    animation: shark-move 3s linear infinite;
 }
 
 .flood-city{
@@ -49,7 +48,7 @@
     transform: scale(2);
     left: 311px;
     bottom: 173px;
-    transition: left 0.1s;
+    /* transition: left 0.1s; */
     animation: v-shaking 3s linear infinite;
 }
 
@@ -63,18 +62,16 @@
     100%{transform: scale(2) translateX(0px)}
 }
 
-@keyframes shaking {
-    0% { transform: translateX(0) scale(3)}
-    25% { transform: translateX(9px) scale(3) }
-    50% { transform: translateX(-9px) scale(3) }
-    75% { transform: translateX(9px) scale(3) }
-    100% { transform: translateX(0) scale(3) }
-   }
-
    @keyframes v-shaking {
     0% { transform: translateY(0) scale(2)}
     25% { transform: translateY(5px) scale(2) }
     50% { transform: translateY(-5px) scale(2) }
     75% { transform: translateY(5px) scale(2) }
     100% { transform: translateX(0) scale(2) }
-   }
+}
+
+@keyframes shark-move {
+    0% { transform: translateX(0px) scale(3)}
+    50% { transform: translateX(10px) scale(3) }
+    100% { transform: translateX(0px) scale(3)}
+}
