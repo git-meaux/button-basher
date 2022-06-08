@@ -15,7 +15,7 @@ import "./styles.css"
 
 
 export default function GameScreen(){
-    const Game = [<BaseGame/>, <SharkEscape />];
+    const Game = [<BaseGame/>, <SharkEscape />, <CoreDriller />];
     const gameSelect = useSelector(selectGame);
     // rotate between games
     // later:  loading/ transition screen
@@ -24,8 +24,8 @@ export default function GameScreen(){
     // other number, other game> new "component"
    
     return <div className="GameScreen">
-        <CoreDriller />
-        {/* {Game[gameSelect]} */}
+        
+        {Game[gameSelect]}
         {/* <BaseGame /> */}
         {/* <SharkEscape/> */}
     </div>

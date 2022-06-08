@@ -18,6 +18,7 @@ import Timer from "../components/Timer";
 
 import background from "./images/earth.png";
 import drill from "./images/drill.png";
+import hole from "./images/hole.png";
 
 import "./styles.css";
 import "./CoreDriller.css";
@@ -32,17 +33,42 @@ export default function CoreDriller() {
   const goal = Math.round((count / target) * 100);
 
   useEffect(() => {
-    dispatch(setTarget(150)); // set the keypress target onloading
+    dispatch(setTarget(240)); // set the keypress target onloading
     setTimeout(() => {
       dispatch(startTimer());
     }, 3000);
   }, []);
   return (
     <div className="core-driller-container">
-      <div className="background">
+      <div
+        className="background"
+        style={{ top: `${Math.round(1766 - (4570 / 100) * goal)}px` }}
+      >
         <img alt="" src={background} />
       </div>
-      <div className="driller"></div>
+      <div className="game-titlebar">
+        <h2>Drill To Center!</h2>
+      </div>
+      <CountDown />
+      {/* <KeyPressers keys={["F", "J"]} /> */}
+      <div
+        className="driller"
+        //   style={{ top: `${goal}px` }}
+        style={{ top: `${Math.round((605 / 100) * goal)}px` }}
+      >
+        <img alt="" src={drill} />
+      </div>
+      <div className="hole" style={{ top: `${-321 + (605 / 100) * goal}px` }}>
+        <img alt="" src={hole} />
+      </div>
+      {!gameEndState ? (
+        <KeyPressers keys={["F", "J"]} />
+      ) : (
+        <>
+          <EndGame /> <TransitionScreen /> <PostGameMenu />
+        </>
+      )}
+      <Timer />
     </div>
   );
 }

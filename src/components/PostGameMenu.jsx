@@ -15,6 +15,11 @@ export default function PostGameMenu(){
         dispatch(resetScore());
         dispatch(changeScreen(0));
     }
+    const backToMenu =()=>{
+        dispatch(gameReset());
+        dispatch(resetScore());
+        dispatch(changeScreen(1));
+    }
 
     const nextGame =()=>{
         if (gameSelect===0){
@@ -25,13 +30,19 @@ export default function PostGameMenu(){
         if (gameSelect===1){
             dispatch(gameReset());
             dispatch(resetScore());
+            dispatch(changeGame(2))
+        }
+        if (gameSelect===2){
+            dispatch(gameReset());
+            dispatch(resetScore());
             dispatch(changeGame(0))}
+            
     }
 
     return <div className="postgame-menu">
         
         <div onClick={()=>backToMain()} className="post-select">Startscreen</div>
-        {/* <div className="post-select">Replay</div> */}
+        <div onClick={()=>backToMenu()} className="post-select">Select Game</div>
         <div onClick={()=>nextGame()} className="post-select">Next Game</div>
     </div>
 }

@@ -1,15 +1,17 @@
+import { useSelector, useDispatch } from "react-redux";
+import { selectScreen } from "./store/screen/selector";
+
+import "./App.css";
+
 import GameScreen from "./screens/Game";
 import StartScreen from "./screens/Start";
-import { useSelector, useDispatch } from "react-redux";
-
-import { selectScreen } from "./store/screen/selector";
-import "./App.css";
+import Menu from "./screens/Menu";
 
 function App() {
   const Screen = useSelector(selectScreen);
   // console.log(Screen);
 
-  const Display = [<StartScreen />, <GameScreen />];
+  const Display = [<StartScreen />, <Menu />, <GameScreen />];
 
   return (
     <div className="App">

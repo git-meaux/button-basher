@@ -41,7 +41,7 @@ export default function SharkEscape() {
         <h2>ESCAPE!!</h2>
       </div>
       <CountDown />
-      <KeyPressers keys={["F", "J"]} />
+      {/* <KeyPressers keys={["F", "J"]} /> */}
       <div className="water-layer"> </div>
       <div className="shark">
         <img src={require("./images/shark.png")} alt="" />

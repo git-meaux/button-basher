@@ -32,13 +32,15 @@ export default function KeyPressers(props){ // passing props-> keys={["X","Y","Z
         // let keyBlock = true
 
         if (count < target && isRunning) {
-            if (event.key==="f" && !block ){
-                 setBlock(!block)
+            if (event.key==="f" /* && !block */ ){
+                // console.log("pressed F")
+                // setBlock(!block)
                 dispatch(countIncrement());
                
             }
-            if (event.key==="j" && block ){
-                setBlock(!block)
+            if (event.key==="j" /* && block */ ){
+                // console.log("pressed J")
+                // setBlock(!block)
                 dispatch(countIncrement());
                 
             }
