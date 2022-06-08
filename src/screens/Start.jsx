@@ -5,6 +5,8 @@ import { changeScreen } from "../store/screen/slice";
 // screens currently numbers, maybe change them to vars
 import "./Start.css";
 import start01 from "./sound/PressStart/start01.aac"
+import intro01 from "./sound/soundtrack.webm"
+
 
 export default function StartScreen(){
     const dispatch = useDispatch()
@@ -14,6 +16,12 @@ export default function StartScreen(){
         const audio = new Audio(start01);
         audio.loop = false;
         audio.play();
+    }
+    const Music =()=>{
+        const audio = new Audio(intro01);
+        audio.loop = true;
+        audio.play()
+        
     }
 
     const start = () =>{

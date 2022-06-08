@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { countIncrement } from "../store/game/slice";
@@ -14,6 +14,7 @@ import { selectTarget } from "../store/game/selector";
 import "./KeyPressers.css"
 
 export default function KeyPressers(props){ // passing props-> keys={["X","Y","Z"]}
+    const [block,setBlock] = useState(true)
     const dispatch = useDispatch()
     const gameRef = useRef();
     const count = useSelector(selectCount);
@@ -22,14 +23,26 @@ export default function KeyPressers(props){ // passing props-> keys={["X","Y","Z
     const target = useSelector(selectTarget);
 
     const keys = props.keys;
+    
 
     // string var should be passed
     // string var are placed in divs as keys graphics
     const keyPressHandler = (event) => {
         // console.log(`Key pressed: ${event.key}`);
+        // let keyBlock = true
 
         if (count < target && isRunning) {
-            dispatch(countIncrement());
+            if (event.key==="f" && !block ){
+                 setBlock(!block)
+                dispatch(countIncrement());
+               
+            }
+            if (event.key==="j" && block ){
+                setBlock(!block)
+                dispatch(countIncrement());
+                
+            }
+            // console.log(block)
           }
           if (count >= target && isRunning) {
             dispatch(stopTimer());
@@ -40,6 +53,7 @@ export default function KeyPressers(props){ // passing props-> keys={["X","Y","Z
 
     useEffect(()=>{
         gameRef.current.focus();
+        // console.log(keys)
     },[])
 
     return <div className="KEYS"

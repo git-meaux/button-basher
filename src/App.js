@@ -7,7 +7,7 @@ import "./App.css";
 
 function App() {
   const Screen = useSelector(selectScreen);
-  console.log(Screen);
+  // console.log(Screen);
 
   const Display = [<StartScreen />, <GameScreen />];
 

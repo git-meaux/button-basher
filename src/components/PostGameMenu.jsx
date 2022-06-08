@@ -31,7 +31,7 @@ export default function PostGameMenu(){
     return <div className="postgame-menu">
         
         <div onClick={()=>backToMain()} className="post-select">Startscreen</div>
-        <div className="post-select">Replay</div>
+        {/* <div className="post-select">Replay</div> */}
         <div onClick={()=>nextGame()} className="post-select">Next Game</div>
     </div>
 }
