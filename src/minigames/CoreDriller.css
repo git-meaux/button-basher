@@ -13,7 +13,7 @@
     left: 276px;
     image-rendering: pixelated;
     transform: scale(3.2);
-    transition: top linear 0.25s;
+    transition: top linear 0.28s;
 }
 
 .driller{
@@ -24,6 +24,7 @@
     transform: scale(2);
     image-rendering: pixelated;
     transition: top 0.2s;
+    animation: shaking 0.2s linear infinite;
 }
 
 .hole{
@@ -34,3 +35,11 @@
     transform: scaleX(2) scaleY(4.5);
     image-rendering: pixelated;
 }
+
+@keyframes shaking {
+    0% { transform: translateX(0) scale(2)}
+    25% { transform: translateX(2px) scale(2) }
+    50% { transform: translateX(-2px) scale(2) }
+    75% { transform: translateX(2px) scale(2) }
+    100% { transform: translateX(0) scale(2) }
+   }
