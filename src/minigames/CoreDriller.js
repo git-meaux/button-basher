@@ -22,6 +22,7 @@ import hole from "./images/hole.png";
 
 import "./styles.css";
 import "./CoreDriller.css";
+import bgm from "./sounds/lvl/deepr.mp3";
 
 export default function CoreDriller() {
   const dispatch = useDispatch();
@@ -51,6 +52,13 @@ export default function CoreDriller() {
       </div>
       <CountDown />
       {/* <KeyPressers keys={["F", "J"]} /> */}
+      {!isRunning ? ( // HTML sound element
+        ""
+      ) : (
+        <audio autoPlay loop id="playAudio">
+          <source src={bgm} />
+        </audio>
+      )}
       <div
         className="driller"
         //   style={{ top: `${goal}px` }}

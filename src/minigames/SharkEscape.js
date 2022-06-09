@@ -18,10 +18,12 @@ import Timer from "../components/Timer";
 
 import "./styles.css";
 import "./sharkescape.css";
+import bgm from "./sounds/lvl/bossFight.mp3";
 
 export default function SharkEscape() {
   const dispatch = useDispatch();
   const count = useSelector(selectCount);
+  const isRunning = useSelector(selectRunning);
 
   const gameEndState = useSelector(selectGameEnd);
   const target = useSelector(selectTarget);
@@ -42,6 +44,13 @@ export default function SharkEscape() {
       </div>
       <CountDown />
       {/* <KeyPressers keys={["F", "J"]} /> */}
+      {!isRunning ? ( // HTML sound element
+        ""
+      ) : (
+        <audio autoPlay loop id="playAudio">
+          <source src={bgm} />
+        </audio>
+      )}
       <div className="water-layer"> </div>
       <div className="shark">
         <img src={require("./images/shark.png")} alt="" />
