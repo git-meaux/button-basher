@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react"
+import { useEffect,useState, useRef } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import { selectGameEnd } from "../store/game/selector"
@@ -14,6 +14,7 @@ import "./EndGame.css"
 
 
 export default function EndGame(){
+  const gameRef = useRef();
   const dispatch = useDispatch();
   const records = useSelector(selectRecords);
   const gameEnd = useSelector(selectGameEnd);
@@ -58,7 +59,7 @@ export default function EndGame(){
         "":
         <div style={hidden?{display:"none"}:{display:"block"}}>
           NEW RECORD!
-          <input onChange={(event)=> setName(event.target.value)} value={name}/>
+          <input maxLength={12} onChange={(event)=> setName(event.target.value)} value={name}/>
           <button onClick={()=>onSaveRecord()}  >submit</button>
         </div>
         }

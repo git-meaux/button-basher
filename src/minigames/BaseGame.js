@@ -30,7 +30,7 @@ export default function BaseGame() {
   const goal = Math.round((count / target) * 100);
 
   useEffect(() => {
-    dispatch(setTarget(50)); // set the keypress target onloading
+    dispatch(setTarget(80)); // set the keypress target onloading
     setTimeout(() => {
       dispatch(startTimer());
     }, 3000);
