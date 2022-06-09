@@ -21,21 +21,26 @@ export const timerSlice = createSlice({
       state.isRunning = false;
     },
     setScore: (state, action) => {
-      console.log("time: ", action.payload);
+      // console.log("time: ", action.payload);
       state.timeScore = action.payload;
     },
     resetScore: (state) => {
-      return initialState;
+      state.timeScore = 0;
+      state.isRunning = false;
     },
-    setRecord: (state, action) => {
+    saveRecord: (state, action) => {
+      // console.log("logging Record: ", action.payload);
       const target = action.payload[0];
-      const record = action.payload[1];
-      state.records = [...state.records];
+      const name = action.payload[1];
+      const record = action.payload[2];
+      console.log({ target: target, name: name, record: record });
+      // state.records = [...state.records];
+      state.records[target] = { name: name, time: record };
     },
   },
 });
 
-export const { startTimer, stopTimer, setScore, resetScore } =
+export const { startTimer, stopTimer, setScore, resetScore, saveRecord } =
   timerSlice.actions;
 
 export default timerSlice.reducer;
