@@ -42,7 +42,7 @@ export default function Menu(){
 
     return <div className="menu-screen">
         <div><h2>Game Select</h2>
-        <div className="records">Alien Visitor: 10.22s: name | Shark Bait: 10.22s: name | To The Core: 10.22s: name</div></div>
+        <div className="records">Alien Visitor: {records[0].name} {records[0].time}s | Shark Bait: {records[1].name} {records[1].time}s | To The Core: {records[2].name} {records[2].time}s</div></div>
         
         <div className="game">
             <input onClick={()=>Select()} name="select" label="Alien Visitor" type="radio" value={0} checked={gameSelect===0}onChange={onOptionChange}></input>
