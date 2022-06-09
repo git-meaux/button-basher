@@ -17,6 +17,7 @@ import KeyPressers from "../components/KeyPressers";
 import Timer from "../components/Timer";
 
 import "./styles.css";
+import bgm from "./sounds/lvl/dracula.mp3";
 
 export default function BaseGame() {
   const gameRef = useRef();
@@ -60,6 +61,14 @@ export default function BaseGame() {
         <div className="explosion">
           <img alt="" src={require("./images/beam.png")} />
         </div>
+      )}
+
+      {!isRunning ? ( // HTML sound element
+        ""
+      ) : (
+        <audio autoPlay loop id="playAudio">
+          <source src={bgm} />
+        </audio>
       )}
 
       {!gameEndState ? (

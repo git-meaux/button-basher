@@ -6,7 +6,7 @@ import { changeGame } from "../store/screen/slice";
 import { changeScreen } from "../store/screen/slice";
 
 import "./styles.css"
-import start03 from "./sound/PressStart/start03.aac"
+import start04 from "./sound/PressStart/start04.aac"
 import selectSnd from "./sound/PressStart/select.mp3"
 
 export default function Menu(){
@@ -20,7 +20,7 @@ export default function Menu(){
     }
 
     const Sound = () =>{
-        const audio = new Audio(start03);
+        const audio = new Audio(start04);
         audio.loop = false;
         audio.play();
     }
