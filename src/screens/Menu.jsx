@@ -4,14 +4,19 @@ import { useSelector, useDispatch } from "react-redux"
 import { selectGame } from "../store/screen/selector";
 import { changeGame } from "../store/screen/slice";
 import { changeScreen } from "../store/screen/slice";
+import { selectRecords } from "../store/timer/selector";
 
 import "./styles.css"
 import start04 from "./sound/PressStart/start04.aac"
 import selectSnd from "./sound/PressStart/select.mp3"
 
 export default function Menu(){
+
     const dispatch =useDispatch();
-    const gameSelect= useSelector(selectGame)
+    const gameSelect= useSelector(selectGame);
+    const records = useSelector(selectRecords);
+    // console.log(records)
+
     const [choice, setChoice] =useState(0)
 
     const onOptionChange = e => {
@@ -36,7 +41,9 @@ export default function Menu(){
     }
 
     return <div className="menu-screen">
-        <h2>Game Select</h2>
+        <div><h2>Game Select</h2>
+        <div className="records">Alien Visitor: 10.22s: name | Shark Bait: 10.22s: name | To The Core: 10.22s: name</div></div>
+        
         <div className="game">
             <input onClick={()=>Select()} name="select" label="Alien Visitor" type="radio" value={0} checked={gameSelect===0}onChange={onOptionChange}></input>
             <input onClick={()=>Select()} name="select" label="Shark Bait" type="radio" value={1} checked={gameSelect===1} onChange={onOptionChange}></input>
