@@ -24,6 +24,7 @@
 }
 
 .game input{
+    text-align: center;
     font-family: 'Press Start 2P';
     display: flex;
     flex-direction: column;
@@ -32,8 +33,9 @@
     font-size: 24px;
     appearance: none;
 	outline: none;
+    border: 2px solid black;
 	cursor: pointer;
-	border-radius: 2px;
+	
 	padding: 4px 8px;
 	/* background: #454857; */
 	color: #bdbdbdbd;
@@ -43,11 +45,12 @@
 }
 
 .game input:checked {
-	border: 1px solid white;
+	border: 2px solid white;
 	color: #fff;
 }
 
 .game input:before {
+    /* border: 1px solid gray; */
 	content: attr(label);
 	text-align: center;
 	width: 100%;

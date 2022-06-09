@@ -7,6 +7,7 @@ import { changeScreen } from "../store/screen/slice";
 
 import "./styles.css"
 import start03 from "./sound/PressStart/start03.aac"
+import selectSnd from "./sound/PressStart/select.mp3"
 
 export default function Menu(){
     const dispatch =useDispatch();
@@ -23,6 +24,11 @@ export default function Menu(){
         audio.loop = false;
         audio.play();
     }
+    const Select = ()=>{
+        const audio = new Audio(selectSnd);
+        audio.loop = false;
+        audio.play();
+    }
       
     const start = () =>{
         Sound();
@@ -32,9 +38,9 @@ export default function Menu(){
     return <div className="menu-screen">
         <h2>Game Select</h2>
         <div className="game">
-            <input name="select" label="Alien Visitor" type="radio" value={0} checked={gameSelect===0}onChange={onOptionChange}></input>
-            <input name="select" label="Shark Bait" type="radio" value={1} checked={gameSelect===1} onChange={onOptionChange}></input>
-            <input name="select" label="To The Core" type="radio" value={2} checked={gameSelect===2}onChange={onOptionChange}></input>
+            <input onClick={()=>Select()} name="select" label="Alien Visitor" type="radio" value={0} checked={gameSelect===0}onChange={onOptionChange}></input>
+            <input onClick={()=>Select()} name="select" label="Shark Bait" type="radio" value={1} checked={gameSelect===1} onChange={onOptionChange}></input>
+            <input onClick={()=>Select()} name="select" label="To The Core" type="radio" value={2} checked={gameSelect===2}onChange={onOptionChange}></input>
         
         </div>
 
