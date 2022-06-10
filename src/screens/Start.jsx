@@ -14,11 +14,11 @@ import intro01 from "./sound/soundtrack.webm"
 import intro02 from "./sound/intro.mp3"
 import intro03 from "./sound/intro03.mp3"
 
-const rndInt = (min, max) => Math.round(Math.random() * (max - min + 1) + min);
+const rndInt = (min, max) => Math.round(Math.random() * (max - min ) + min);
 
 export default function StartScreen(){
-    const tracks = [intro01,intro02,intro03,intro01];
-    const startVar = [start01,start02,start03,start04,start05,start01]
+    const tracks = [intro01,intro02,intro03];
+    const startVar = [start01,start02,start03,start04,start05]
 
     const dispatch = useDispatch()
     const [muted,setMuted] =useState(false)
