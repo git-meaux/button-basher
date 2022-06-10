@@ -20,4 +20,4 @@ I found some guidance from vanilla Javascript game tutorials, most of the game l
 
 The way it's set up, is so that I can add more games in the future.
 
-[Demo link](https://jolly-leakey-25a5d0.netlify.app/)
+[Demo link](https://dreamy-lokum-8b4288.netlify.app/)
