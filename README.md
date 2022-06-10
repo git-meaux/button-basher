@@ -1,9 +1,6 @@
 <img src="./game-screens/start.png" />
 
-<img src="https://img.shields.io/badge/Javascript--darkgrey?logo=javascript" />
-<img src="https://img.shields.io/badge/React-v18-darkgrey?logo=react" />
-<img src="https://img.shields.io/badge/Redux-v8-darkgrey?logo=redux" />
-<img src="https://img.shields.io/badge/ReduxToolkit-v1.8-darkgrey?logo=redux" />
+<img src="https://img.shields.io/badge/Javascript--darkgrey?logo=javascript" /> <img src="https://img.shields.io/badge/React-v18-darkgrey?logo=react" /> <img src="https://img.shields.io/badge/Redux-v8-darkgrey?logo=redux" /> <img src="https://img.shields.io/badge/ReduxToolkit-v1.8-darkgrey?logo=redux" />
 
 ---
 
