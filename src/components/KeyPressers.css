@@ -32,3 +32,35 @@
     border: 2px solid whitesmoke;
     background-color: rgba(20, 20, 20, 0.438);
 }
+.blink1{
+    position: absolute;
+    bottom: 20px;
+    left:103px;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0px 0px 6px 3px white;
+    background-color: rgba(255,255,255,0.3);
+    z-index: 2;
+    animation: blinker 0.3s linear infinite;
+    animation-delay: 0.15s;
+}
+.blink2{
+    position: absolute;
+    bottom: 20px;
+    right: 102px;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0px 0px 6px 3px white;
+    background-color: rgba(255,255,255,0.3);
+    z-index: 2;
+    animation: blinker 0.3s linear infinite;
+}
+
+@keyframes keyblinker {
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+      }
+  }

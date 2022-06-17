@@ -25,7 +25,7 @@ export default function Timer(){
         }
 
         return () => {
-            console.log("STOP THE TIME")
+            // console.log("STOP THE TIME")
             // dispatch(setScore(time))
             clearInterval(interval)
         };

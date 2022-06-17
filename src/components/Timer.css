@@ -5,7 +5,7 @@
     bottom:188px;
     left:246px;
     transform: skew(-14deg);
-    /* color: red; */
+    text-shadow: 2px 2px black;
 
 
     z-index: 18;

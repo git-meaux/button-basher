@@ -48,7 +48,7 @@
     transform: scale(2);
     left: 311px;
     bottom: 173px;
-    /* transition: left 0.1s; */
+    transition: left 0.1s;
     animation: v-shaking 3s linear infinite;
 }
 
