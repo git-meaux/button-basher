@@ -18,6 +18,7 @@ I found some guidance from vanilla Javascript game tutorials, most of the game l
 
 ## continuation
 
-The way it's set up, is so that I can add more games in the future.
+The way it's set up, is so that I can add more games in the future,
+and add complexity to user input
 
 [Demo link](https://dreamy-lokum-8b4288.netlify.app/)
