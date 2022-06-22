@@ -23,8 +23,13 @@
     font-family: 'VT323', monospace;
     text-align: center;
     width: 100%;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
 }
-
+.EndGame input:focus{
+    outline: none;;
+}
 .EndGame button{
     font-size: larger;
     padding-top: 2px;

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import useSound from "use-sound";
 
 import { changeScreen } from "../store/screen/slice";
 // screens currently numbers, maybe change them to vars
@@ -35,7 +36,7 @@ export default function StartScreen(){
         Sound();
         setTimeout(()=>dispatch(changeScreen(1)),1000); 
     }
-    
+   
 
     return <div className="StartScreen"  >
         <div onClick={()=> start() } className="ClickHere">Click Here To Start</div>

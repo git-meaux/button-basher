@@ -72,6 +72,8 @@ export default function KeyPressers(props){ // passing props-> keys={["X","Y","Z
         {/* {keys.map((str,index) => (<div key={index} className="KEY">{str}</div>))} */}
         <div  className="KEY">F</div>
         <div  className="KEY">J</div>
+        <div className="blink1"></div>
+        <div className="blink2"></div>
     </div>
     
     </div>
